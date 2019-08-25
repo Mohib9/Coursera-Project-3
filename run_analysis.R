@@ -1,16 +1,19 @@
+library(dplyr)
+library(data.table)
+
 ##Read features.txt and activity.txt
-features <- read.table("features.txt")
-activity <- read.table("activity_labels.txt")
+features <- read.table("C:/Users/muham/OneDrive/Documents/Coursera-Project-3/features.txt")
+activity <- read.table("C:/Users/muham/OneDrive/Documents/Coursera-Project-3/activity_labels.txt")
 
 ##Read test data
-x_test <- read.table("X_test.txt")
-y_test <- read.table("y_test.txt")
-subject_test <- read.table("subject_test.txt")
+x_test <- read.table("C:/Users/muham/OneDrive/Documents/Coursera-Project-3/X_test.txt")
+y_test <- read.table("C:/Users/muham/OneDrive/Documents/Coursera-Project-3/y_test.txt")
+subject_test <- read.table("C:/Users/muham/OneDrive/Documents/Coursera-Project-3/subject_test.txt")
 
 ##Read train data
-x_train <- read.table("X_train.txt")
-y_train <- read.table("y_train.txt")
-subject_train <- read.table("subject_train.txt")
+x_train <- read.table("C:/Users/muham/OneDrive/Documents/Coursera-Project-3/X_train.txt")
+y_train <- read.table("C:/Users/muham/OneDrive/Documents/Coursera-Project-3/y_train.txt")
+subject_train <- read.table("C:/Users/muham/OneDrive/Documents/Coursera-Project-3/subject_train.txt")
 
 ##Renaming columns train / test
 names(subject_train) <- "ID"
@@ -45,7 +48,7 @@ extracted_data <- comb_data[, req_columns, with=FALSE]
 extracted_data$label <- activity[extracted_data$label, 2]
 
 ##Removing regular expressions from column names. Note here that I could have modified the columns names like "accelerometer" etc...but that would
-##would have made it all very verbose. I think its better to have concise info in the column names without the expressions.
+##would have made it all verbose. I think its better to have concise info in the column names without the expressions.
 names(extracted_data) <- gsub("-","", names(extracted_data))
 names(extracted_data) <- gsub("\\()","", names(extracted_data))
 
