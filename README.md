@@ -4,7 +4,7 @@ This repository contains my solution to the course project 3: Getting and Cleani
 
 It contains the following files:
 
-**1. CodeBook.md :** it describes the procedure alongwith the variables that I utilized to carry out the analysis.
+**1. CodeBook.md :** It describes the procedure alongwith the variables that I utilized to carry out the analysis.
 
 **2. run_analysis.R :** It is the code that I utilized to perform the analysis as required by the course project. It has the 5 following steps as stated in the requirement:
 
